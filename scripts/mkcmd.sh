@@ -461,6 +461,7 @@ function mkrootfs()
     mk_info "Platform is ${LICHEE_PLATFORM}  ${LICHEE_BR_DIR} ${LICHEE_KERN_DIR}"
 #INFO: Platform is linux  /home/vagrant/baidu/a20/lichee/buildroot /home/vagrant/baidu/a20/lichee/linux-3.4
     if [ ${LICHEE_PLATFORM} = "linux" ] ; then
+	rm ${LICHEE_PLAT_OUT}/rootfs.ext4
         make O=${LICHEE_BR_OUT} -C ${LICHEE_BR_DIR} target-generic-getty-busybox
         [ $? -ne 0 ] && mk_error "build rootfs Failed" && return 1
         make O=${LICHEE_BR_OUT} -C ${LICHEE_BR_DIR} target-finalize
@@ -469,7 +470,8 @@ function mkrootfs()
         cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/
 	${LICHEE_BR_DIR}/target/linux/install.sh ${LICHEE_BR_OUT}/target/
 	rm -rf ${LICHEE_BR_OUT}/target/a20-petbot-firmware
-        cp  -Lr ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware
+        #cp  -Lr ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware
+	rsync -Lrv --exclude='*.in' --exclude='*.am' --exclude='*.ac' --exclude=.git --exclude=.deps --exclude=autom4te.cache --exclude='*.[cho]' ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
         mk_info cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
         mk_info "cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/"
