@@ -1,0 +1,7 @@
+menuconfig BR2_PACKAGE_A20_PETBOT_FIRMWARE
+	bool "a20-petbot-firmware"
+	help
+	  Basic support for a20 petbot firmware
+
+	  http://www.petbot.com/
+

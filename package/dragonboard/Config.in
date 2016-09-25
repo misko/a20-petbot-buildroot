@@ -1,0 +1,6 @@
+config BR2_PACKAGE_DRAGONBOARD
+	bool "dragonboard"
+	help
+	  Dragonboardutils
+
+	  http://www.xs4all.nl/~carlo17/which/

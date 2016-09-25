@@ -1,0 +1,10 @@
+--- ./arm-linux-gnueabihf/libc/usr/include/linux/spi/spidev.h	2012-04-11 08:30:01.000000000 +0800
++++ ../linux-sunxi/include/linux/spi/spidev.h	2016-09-15 02:47:34.687383967 +0800
+@@ -90,6 +90,7 @@
+ 	__u32		speed_hz;
+ 
+ 	__u16		delay_usecs;
++	__u16		interbyte_usecs;
+ 	__u8		bits_per_word;
+ 	__u8		cs_change;
+ 	__u32		pad;

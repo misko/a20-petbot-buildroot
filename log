@@ -1,0 +1,9 @@
+
+ERROR: Invalid Platform
+
+build.sh - Top level build scritps
+Valid Options:
+  -h  Show help message
+  -p <platform> platform
+  -m <module> module
+

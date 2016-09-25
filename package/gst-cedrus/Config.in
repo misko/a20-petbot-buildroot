@@ -1,0 +1,8 @@
+menuconfig BR2_PACKAGE_GST_CEDRUS
+	bool "gst-cedrus"
+	select BR2_PACKAGE_GST1_PLUGINS_BASE
+	help
+	  Basic support for gst cedrus
+
+	  http://www.petbot.com/
+

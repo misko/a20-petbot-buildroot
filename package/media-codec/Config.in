@@ -1,0 +1,7 @@
+menuconfig BR2_PACKAGE_MEDIA_CODEC
+	bool "media-codec"
+	help
+	  Basic support for media codec
+
+	  http://www.petbot.com/
+
