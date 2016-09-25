@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "MISKO - in rcS"
+#mount -t devtmpfs none /dev
+mkdir /dev/pts
+#mount -t devpts none /dev/pts
+#mount -t sysfs sysfs /sys
+mknod /dev/mali c 230 0
+hostname sun7i
+#mkdir -p /boot
+#mount /dev/nanda /boot
+MODULES_DIR=/lib/modules/`uname -r`
+
+echo "MISKO - DONE -  in rcS"
