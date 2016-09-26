@@ -2,10 +2,10 @@
 
 pushd /tmp/
 
+mkdir -p ./emmc
 # Set default values
 EMMC_DEVICE=${EMMC:="/dev/mmcblk0"}
 
-echo "FORMAT partition 2 - ${EMMC_DEVICE}p1 - ext4"
 mkfs.ext4 $EMMC_DEVICE"p"2 > /dev/null 2>&1
 if [ $? -ne 0 ]; then
 	echo "FAILED MKFS"

@@ -13,7 +13,7 @@ if [ -e /dev/mmcblk1 ]; then
 	play flashing_petbot.wav 
 	setup_to_emmc.sh
 	if [ $? -eq 0 ]; then 
-		test_led blink &
+		test_led blink 6 &
 		play flashing_complete.wav &
 		sleep 3 
 	else
@@ -27,7 +27,7 @@ if [ -e /recovery_partition ]; then
 	play recovery_start.wav 
 	recover_from_emmc.sh	
 	if [ $? -eq 0 ]; then
-		test_led blink &
+		test_led blink 6 &
 		play recovery_complete.wav &
 		sleep 3
 		reboot
