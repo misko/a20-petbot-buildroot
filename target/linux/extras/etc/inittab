@@ -21,6 +21,7 @@ null::sysinit:/bin/mount -a
 null::sysinit:/bin/hostname -F /etc/hostname
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
+::sysinit:/online_check.sh
 ::sysinit:/a20-petbot-firmware/scripts/load_all.sh
 ::sysinit:/button_test.sh &
 

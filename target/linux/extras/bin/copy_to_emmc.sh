@@ -165,7 +165,6 @@ __EOF__
     fi
 
 
-
     # Make file system
     print_with_color "Formating to $fs..."
     echo mkfs.$fs $EMMC_DEVICE"p"$p 
@@ -191,10 +190,7 @@ __EOF__
     rsync -av --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} $mount_point/ ./emmc
     
     print_with_color "Syncing..."
-    echo sync
     
-    #echo umount $EMMC_DEVICE"p"$p #> /dev/null 2>&1
-    #echo umount $MMC_DEVICE"p"$p #> /dev/null 2>&1
     if [ "$mount_point" = "./mmc" ] ; then
       umount ./mmc
     fi
