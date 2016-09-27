@@ -6,6 +6,16 @@ mkdir -p ./emmc
 # Set default values
 EMMC_DEVICE=${EMMC:="/dev/mmcblk0"}
 
+mkfs.ext4 $EMMC_DEVICE"p"5 > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+	echo "FAILED MKFS"
+	exit 1
+fi
+mkfs.ext4 $EMMC_DEVICE"p"4 > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+	echo "FAILED MKFS"
+	exit 1
+fi
 mkfs.ext4 $EMMC_DEVICE"p"2 > /dev/null 2>&1
 if [ $? -ne 0 ]; then
 	echo "FAILED MKFS"
