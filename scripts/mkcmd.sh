@@ -31,7 +31,7 @@ function mk_info()
 LICHEE_TOP_DIR=`pwd`
 LICHEE_BOOT_DIR=${LICHEE_TOP_DIR}/boot
 LICHEE_BR_DIR=${LICHEE_TOP_DIR}/buildroot
-LICHEE_KERN_DIR=${LICHEE_TOP_DIR}/linux-3.4
+LICHEE_KERN_DIR=${LICHEE_TOP_DIR}/linux-sunxi
 LICHEE_TOOLS_DIR=${LICHEE_TOP_DIR}/tools
 LICHEE_UBOOT_DIR=${LICHEE_TOP_DIR}/u-boot
 LICHEE_OUT_DIR=${LICHEE_TOP_DIR}/out
@@ -468,13 +468,17 @@ function mkrootfs()
         [ $? -ne 0 ] && mk_error "build rootfs Failed" && return 1
 	#MISKO lets try to mix in dragonboard...
         cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/
+        mk_info "cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/"
 	${LICHEE_BR_DIR}/target/linux/install.sh ${LICHEE_BR_OUT}/target/
 	rm -rf ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         #cp  -Lr ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware
 	rsync -Lrv --exclude='*.in' --exclude='*.am' --exclude='*.ac' --exclude=.git --exclude=.deps --exclude=autom4te.cache --exclude='*.[cho]' --include='*.sh' ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD/ ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
         mk_info cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
-        mk_info "cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/"
+
+	cp -rf ${LICHEE_KERN_DIR}/output/petbot/lib ${LICHEE_BR_OUT}/target/	
+	mk_info cp -rf ${LICHEE_KERN_DIR}/output/petbot/lib ${LICHEE_BR_OUT}/target/	
+	
 	#run the dragonboar script
 	mk_info "build.sh for target linux"
         #(cd ${LICHEE_BR_DIR}/target/linux; ./build.sh)
