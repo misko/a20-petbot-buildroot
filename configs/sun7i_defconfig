@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot 2011.02-gc39c0ad-dirty Configuration
-# Tue Sep 27 12:02:23 2016
+# Buildroot 2011.02-g3003e56-dirty Configuration
+# Thu Sep 29 00:55:04 2016
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_arm=y
@@ -33,18 +33,19 @@ BR2_arm=y
 #
 # cortex-A8/A9 needs gcc >= 4.4.x
 #
+BR2_cortex_a7=y
 # BR2_cortex_a8 is not set
-BR2_cortex_a9=y
+# BR2_cortex_a9 is not set
 # BR2_sa110 is not set
 # BR2_sa1100 is not set
 # BR2_xscale is not set
 # BR2_iwmmxt is not set
-BR2_ARM_TYPE="ARM_CORTEXA9"
+BR2_ARM_TYPE="ARM_CORTEXA7"
 BR2_ARM_EABI=y
 # BR2_ARM_OABI is not set
 BR2_ARCH="arm"
 BR2_ENDIAN="LITTLE"
-BR2_GCC_TARGET_TUNE="cortex-a9"
+BR2_GCC_TARGET_TUNE="cortex-a7"
 BR2_GCC_TARGET_ARCH="armv7-a"
 BR2_GCC_TARGET_ABI="aapcs-linux"
 
@@ -84,8 +85,8 @@ BR2_STRIP_strip=y
 # BR2_OPTIMIZE_0 is not set
 # BR2_OPTIMIZE_1 is not set
 # BR2_OPTIMIZE_2 is not set
-# BR2_OPTIMIZE_3 is not set
-BR2_OPTIMIZE_S=y
+BR2_OPTIMIZE_3=y
+# BR2_OPTIMIZE_S is not set
 # BR2_PREFER_STATIC_LIB is not set
 # BR2_HAVE_DOCUMENTATION is not set
 # BR2_HAVE_DEVFILES is not set
@@ -128,7 +129,7 @@ BR2_ENABLE_LOCALE_WHITELIST="C en_US"
 BR2_USE_MMU=y
 # BR2_PREFER_SOFT_FLOAT is not set
 # BR2_SOFT_FLOAT is not set
-BR2_TARGET_OPTIMIZATION="-pipe"
+BR2_TARGET_OPTIMIZATION="-pipe  -mfpu=neon-vfpv4  -mfloat-abi=hard"
 
 #
 # System configuration
@@ -551,22 +552,22 @@ BR2_PACKAGE_OPENCV_LIB_CONTRIB=y
 BR2_PACKAGE_OPENCV_LIB_FEATURES2D=y
 BR2_PACKAGE_OPENCV_LIB_FLANN=y
 # BR2_PACKAGE_OPENCV_LIB_GPU is not set
-BR2_PACKAGE_OPENCV_LIB_HIGHGUI=y
+# BR2_PACKAGE_OPENCV_LIB_HIGHGUI is not set
 BR2_PACKAGE_OPENCV_LIB_IMGPROC=y
 BR2_PACKAGE_OPENCV_LIB_LEGACY=y
 BR2_PACKAGE_OPENCV_LIB_ML=y
 # BR2_PACKAGE_OPENCV_LIB_NONFREE is not set
 BR2_PACKAGE_OPENCV_LIB_OBJDETECT=y
-BR2_PACKAGE_OPENCV_LIB_PHOTO=y
+# BR2_PACKAGE_OPENCV_LIB_PHOTO is not set
 
 #
 # opencv_python module requires numpy which is not yet available.
 #
-BR2_PACKAGE_OPENCV_LIB_STITCHING=y
-BR2_PACKAGE_OPENCV_LIB_SUPERRES=y
-BR2_PACKAGE_OPENCV_LIB_TS=y
+# BR2_PACKAGE_OPENCV_LIB_STITCHING is not set
+# BR2_PACKAGE_OPENCV_LIB_SUPERRES is not set
+# BR2_PACKAGE_OPENCV_LIB_TS is not set
 BR2_PACKAGE_OPENCV_LIB_VIDEO=y
-BR2_PACKAGE_OPENCV_LIB_VIDEOSTAB=y
+# BR2_PACKAGE_OPENCV_LIB_VIDEOSTAB is not set
 
 #
 # Test sets
@@ -581,7 +582,6 @@ BR2_PACKAGE_OPENCV_WITH_GST1=y
 # BR2_PACKAGE_OPENCV_WITH_JASPER is not set
 # BR2_PACKAGE_OPENCV_WITH_JPEG is not set
 # BR2_PACKAGE_OPENCV_WITH_PNG is not set
-# BR2_PACKAGE_OPENCV_WITH_QT is not set
 # BR2_PACKAGE_OPENCV_WITH_TIFF is not set
 # BR2_PACKAGE_OPENCV_WITH_V4L is not set
 
@@ -917,7 +917,14 @@ BR2_PACKAGE_IW=y
 # BR2_PACKAGE_NETSNMP is not set
 # BR2_PACKAGE_NETSTAT_NAT is not set
 # BR2_PACKAGE_NFS_UTILS is not set
-# BR2_PACKAGE_NTP is not set
+BR2_PACKAGE_NTP=y
+# BR2_PACKAGE_NTP_SNTP is not set
+# BR2_PACKAGE_NTP_NTP_KEYGEN is not set
+BR2_PACKAGE_NTP_NTPD=y
+BR2_PACKAGE_NTP_NTPDATE=y
+# BR2_PACKAGE_NTP_NTPDC is not set
+# BR2_PACKAGE_NTP_NTPQ is not set
+# BR2_PACKAGE_NTP_TICKADJ is not set
 # BR2_PACKAGE_NUTTCP is not set
 # BR2_PACKAGE_OLSR is not set
 # BR2_PACKAGE_OPENNTPD is not set
