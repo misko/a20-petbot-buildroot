@@ -31,11 +31,14 @@ GST1_PLUGINS_BASE_CONF_OPT += \
 	--disable-libvisual \
 	--disable-iso-codes
 
+GST1_PLUGINS_BASE_CONF_OPT += \
+	--enable-neon
+
 
 #SYSSTAT_DEPENDENCIES += gettext libintl
 #SYSSTAT_MAKE_OPT += CFLAGS+=-lintl
 GST1_PLUGINS_BASE_DEPENDENCIES = gstreamer1 gettext  libintl
-GST1_PLUGINS_BASE_MAKE_OPT += CFLAGS+=-lintl 
+GST1_PLUGINS_BASE_MAKE_OPT += CFLAGS+="-lintl -mfpu=neon-vfpv4 -mfloat-abi=hard"
 
 
 # These plugins are liste in the order from ./configure --help
