@@ -10,4 +10,8 @@ hostname sun7i
 #mount /dev/nanda /boot
 MODULES_DIR=/lib/modules/`uname -r`
 
+if [ ! -e /dev/mmcblk1 ]; then
+	mount /dev/mmcblk0p5 /config
+	mount /dev/mmcblk0p6 /update
+fi
 echo "MISKO - DONE -  in rcS"

@@ -148,10 +148,11 @@ format $EMMC_DEVICE"p"6 "ext4"
 mkdir -p ./emmc
 mkdir -p ./emmc2
 mkdir -p ./mmc
+mkdir -p ./config
 
 # copy over the boot
 xmount $MMC_DEVICE"p1" ./mmc
-xcopy "./mmc/" $EMMC_DEVICE"p1" noatime,discard
+xcopy "./mmc/" $EMMC_DEVICE"p1" noatime
 umount ./mmc
 
 #echo "COPY ROOT TO p2"
@@ -166,8 +167,10 @@ umount ./mmc
 echo "COPY ROOT TO p2 - dd"
 xdd /rootfs.ext4 $EMMC_DEVICE"p2" 
 xdd /rootfs.ext4 $EMMC_DEVICE"p3" 
-xmount $EMMC_DEVICE"p3" ./emmc
-touch ./emmc/recovery_partition
-umount ./emmc
+xmount $EMMC_DEVICE"p3" ./emmc2
+
+xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime
+touch ./emmc2/recovery_partition
+umount ./emmc2
 
 exit 0 # success on exit
