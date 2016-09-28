@@ -12,7 +12,7 @@ GST1_LIBAV_DEPENDENCIES = host-pkg-config gstreamer1 gst1-plugins-base
 
 GST1_LIBAV_CONF_EXTRA_OPT = --cross-prefix=$(TARGET_CROSS) --target-os=linux
 
-GST1_LIBAV_CFLAGS += -mfpu=neon
+GST1_LIBAV_CFLAGS += -mfpu=neon-vfpv4
 
 ifeq ($(BR2_PACKAGE_ZLIB),y)
 GST1_LIBAV_CONF_EXTRA_OPT += --enable-zlib
