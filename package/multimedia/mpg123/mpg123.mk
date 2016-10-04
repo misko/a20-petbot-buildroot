@@ -5,7 +5,8 @@
 #############################################################
 
 #MPG123_VERSION = 1.13.1
-MPG123_VERSION = 1.17.0
+#MPG123_VERSION = 1.17.0
+MPG123_VERSION = 1.23.8
 MPG123_SOURCE = mpg123-$(MPG123_VERSION).tar.bz2
 MPG123_SITE = http://$(BR2_SOURCEFORGE_MIRROR).dl.sourceforge.net/sourceforge/mpg123
 MPG123_CONF_OPT = --with-optimization=0 --disable-lfs-alias

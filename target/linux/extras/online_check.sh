@@ -12,6 +12,7 @@ if [ -e /dev/mmcblk1 ]; then
 	echo "STARTING COPY FROM SD CARD"
 	play flashing_petbot.wav 
 	setup_to_emmc.sh
+	sync
 	if [ $? -eq 0 ]; then 
 		test_led blink 6 &
 		play flashing_complete.wav &
@@ -20,6 +21,22 @@ if [ -e /dev/mmcblk1 ]; then
 		play flashing_failed.wav
 	fi
 	halt
+else
+	echo "TESTING UPDATE AND CONFIG PARTITIONS"
+	mkdir -p /update
+	mkdir -p /config
+	#try to mount and format if necessary
+	mount /dev/mmcblk0p5 /config
+	if [ $? -ne 0 ]; then
+		echo "FAILED TO MOUNT CONFIG, formatting..."
+		mkfs.ext4 /dev/mmcblk0p5
+	fi
+	mount /dev/mmcblk0p6 /update
+	if [ $? -ne 0 ]; then
+		echo "FAILED TO MOUNT UPDATE, formatting..."
+		mkfs.ext4 /dev/mmcblk0p6
+	fi
+		
 fi
 
 if [ -e /recovery_partition ]; then 
@@ -36,3 +53,7 @@ if [ -e /recovery_partition ]; then
 		halt
 	fi
 fi
+
+
+
+
