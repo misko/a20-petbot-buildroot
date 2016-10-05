@@ -23,7 +23,7 @@ null::sysinit:/bin/hostname -F /etc/hostname
 ::sysinit:/etc/init.d/rcS
 ::sysinit:/online_check.sh
 ::sysinit:/a20-petbot-firmware/scripts/load_all.sh
-::sysinit:/button_test.sh &
+::sysinit:/a20-petbot-firmware/scripts/launch.sh &
 
 # Set up a couple of getty's
 tty1::respawn:/sbin/getty 38400 tty1

@@ -97,7 +97,7 @@ n
 p
 2
 $end
-+2000M
++1000M
 w
 __EOF__
 
@@ -108,7 +108,7 @@ n
 p
 3
 $end
-+2000M
++1000M
 w
 __EOF__
 
@@ -126,7 +126,7 @@ echo "SETUP partition 5 - ${EMMC_DEVICE}p5"
 	    fdisk $EMMC_DEVICE > /dev/null 2>&1 << __EOF__
 n
 
-+100M
++50M
 w
 __EOF__
 	    
@@ -134,7 +134,7 @@ echo "SETUP partition 6 - ${EMMC_DEVICE}p6"
 	    fdisk $EMMC_DEVICE > /dev/null 2>&1 << __EOF__
 n
 
-+2000M
++1000M
 w
 __EOF__
 
