@@ -4,7 +4,8 @@
 #
 ################################################################################
 
-LIBNICE_VERSION = 0.1.8
+#LIBNICE_VERSION = 0.1.8
+LIBNICE_VERSION = 0.1.13
 LIBNICE_SOURCE =libnice-$(LIBNICE_VERSION).tar.gz
 LIBNICE_SITE = http://nice.freedesktop.org/releases/
 
