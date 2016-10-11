@@ -51,6 +51,8 @@ else
 	echo TEST WIFI PASS
 fi
 
+echo TEST SIGNAL `iwconfig | grep Signal | sed 's@.*Signal.*level=\(.*\) \(dBm\) .*@\1\2@g'`
+
 #microphone test
 echo TEST MICROPHONE In_progress...
 play start_microphone.wav
