@@ -43,8 +43,16 @@ function xmount() {
 function xdd() {
 	src=$1
 	dev=$2
-	time dd bs=1M if=$src of=$dev
-	time resize2fs $dev
+	dd bs=1M if=$src of=$dev
+	if [ $? -ne 0 ]; then
+		echo "FAILED DD!"
+		exit 1
+	fi
+	resize2fs $dev
+	if [ $? -ne 0 ]; then
+		echo "FAILED RESIZE!"
+		exit 1
+	fi
 }
 
 function xcopy() {
@@ -165,12 +173,12 @@ umount ./mmc
 #umount ./emmc2
 
 echo "COPY ROOT TO p2 - dd"
+xdd /rootfs.ext4 $EMMC_DEVICE"p3" # first copy the recovery partition 
 xdd /rootfs.ext4 $EMMC_DEVICE"p2" 
-xdd /rootfs.ext4 $EMMC_DEVICE"p3" 
 xmount $EMMC_DEVICE"p3" ./emmc2
-
-xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime
 touch ./emmc2/recovery_partition
 umount ./emmc2
+
+xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime
 
 exit 0 # success on exit
