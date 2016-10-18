@@ -177,8 +177,8 @@ xdd /rootfs.ext4 $EMMC_DEVICE"p3" # first copy the recovery partition
 xdd /rootfs.ext4 $EMMC_DEVICE"p2" 
 xmount $EMMC_DEVICE"p3" ./emmc2
 touch ./emmc2/recovery_partition
+xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime
 umount ./emmc2
 
-xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime
 
 exit 0 # success on exit
