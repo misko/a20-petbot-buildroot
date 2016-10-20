@@ -23,6 +23,9 @@ endef
 
 define LIBJPCNN_INSTALL_TARGET_CMDS
     $(INSTALL) -D -m 0755 $(@D)/libjpcnn.so* $(TARGET_DIR)/usr/lib
+    cp $(@D)/jpcnn $(TARGET_DIR)/bin/
+    cp $(@D)/data/*.jpg $(TARGET_DIR)/
+    cp $(@D)/data/*.png $(TARGET_DIR)/
 endef
 
 
