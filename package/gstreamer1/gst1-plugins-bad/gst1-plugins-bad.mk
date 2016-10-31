@@ -478,11 +478,11 @@ else
 GST1_PLUGINS_BAD_CONF_OPT += --disable-videomeasure
 endif
 
-ifeq ($(BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_VIDEOPARSERS),y)
+#ifeq ($(BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_VIDEOPARSERS),y)
 GST1_PLUGINS_BAD_CONF_OPT += --enable-videoparsers
-else
-GST1_PLUGINS_BAD_CONF_OPT += --disable-videoparsers
-endif
+#else
+#GST1_PLUGINS_BAD_CONF_OPT += --disable-videoparsers
+#endif
 
 ifeq ($(BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_VIDEOSIGNAL),y)
 GST1_PLUGINS_BAD_CONF_OPT += --enable-videosignal
