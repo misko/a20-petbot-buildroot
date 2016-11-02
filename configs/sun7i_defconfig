@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot 2011.02-gdd2fab3-dirty Configuration
-# Tue Oct  4 13:37:16 2016
+# Buildroot 2011.02-g54bab5f-dirty Configuration
+# Wed Nov  2 00:42:35 2016
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_arm=y
@@ -78,14 +78,17 @@ BR2_DEBIAN_MIRROR="http://ftp.debian.org"
 BR2_JLEVEL=5
 # BR2_CCACHE is not set
 # BR2_DEPRECATED is not set
-# BR2_ENABLE_DEBUG is not set
+BR2_ENABLE_DEBUG=y
+# BR2_DEBUG_1 is not set
+BR2_DEBUG_2=y
+# BR2_DEBUG_3 is not set
 BR2_STRIP_strip=y
 # BR2_STRIP_sstrip is not set
 # BR2_STRIP_none is not set
 # BR2_OPTIMIZE_0 is not set
 # BR2_OPTIMIZE_1 is not set
-# BR2_OPTIMIZE_2 is not set
-BR2_OPTIMIZE_3=y
+BR2_OPTIMIZE_2=y
+# BR2_OPTIMIZE_3 is not set
 # BR2_OPTIMIZE_S is not set
 # BR2_PREFER_STATIC_LIB is not set
 # BR2_HAVE_DOCUMENTATION is not set
@@ -110,7 +113,7 @@ BR2_TOOLCHAIN_EXTERNAL_GLIBC=y
 # Gdb Options
 #
 BR2_PACKAGE_GDB=y
-# BR2_PACKAGE_GDB_SERVER is not set
+BR2_PACKAGE_GDB_SERVER=y
 # BR2_GDB_VERSION_6_7_1 is not set
 BR2_GDB_VERSION_6_8=y
 # BR2_GDB_VERSION_7_0_1 is not set
@@ -254,6 +257,7 @@ BR2_PACKAGE_MPG123=y
 BR2_PACKAGE_MEMSTAT=y
 # BR2_PACKAGE_NETPERF is not set
 BR2_PACKAGE_STRACE=y
+# BR2_PACKAGE_VALGRIND is not set
 # BR2_PACKAGE_WHETSTONE is not set
 
 #
@@ -276,12 +280,12 @@ BR2_PACKAGE_STRACE=y
 #
 # native toolchain needs development files in target filesystem
 #
-# BR2_PACKAGE_GMP is not set
+BR2_PACKAGE_GMP=y
 # BR2_PACKAGE_GPERF is not set
 # BR2_PACKAGE_GREP is not set
 # BR2_PACKAGE_MAKE is not set
 # BR2_PACKAGE_MPC is not set
-# BR2_PACKAGE_MPFR is not set
+BR2_PACKAGE_MPFR=y
 # BR2_PACKAGE_LIBTOOL is not set
 # BR2_PACKAGE_M4 is not set
 # BR2_PACKAGE_PATCH is not set
@@ -455,8 +459,8 @@ BR2_PACKAGE_ZLIB=y
 # Crypto
 #
 # BR2_PACKAGE_BEECRYPT is not set
-# BR2_PACKAGE_LIBGCRYPT is not set
-# BR2_PACKAGE_LIBGPG_ERROR is not set
+BR2_PACKAGE_LIBGCRYPT=y
+BR2_PACKAGE_LIBGPG_ERROR=y
 BR2_PACKAGE_OPENSSL=y
 # BR2_PACKAGE_OPENSSL_BIN is not set
 # BR2_PACKAGE_OPENSSL_ENGINES is not set
@@ -541,6 +545,8 @@ BR2_PACKAGE_LIBFFI=y
 BR2_PACKAGE_LIBGLIB2=y
 # BR2_PACKAGE_DRAGONBOARD is not set
 BR2_PACKAGE_LIBNICE=y
+BR2_PACKAGE_LIBSRTP=y
+BR2_PACKAGE_GNUTLS=y
 BR2_PACKAGE_MEDIA_CODEC=y
 BR2_PACKAGE_OPENCV=y
 
@@ -594,11 +600,12 @@ BR2_PACKAGE_OPENCV_WITH_GST1=y
 #
 # opencv needs a toolchain w/ C++, NPTL, wchar
 #
-BR2_PACKAGE_ORC=y
+# BR2_PACKAGE_ORC is not set
 BR2_PACKAGE_LIBJPCNN=y
 BR2_PACKAGE_A20_PETBOT_FIRMWARE=y
 BR2_PACKAGE_GST_JPCNN=y
 BR2_PACKAGE_GST_CEDARX=y
+BR2_PACKAGE_CA_CERTIFICATES=y
 # BR2_PACKAGE_MODULE_INIT_TOOLS is not set
 BR2_PACKAGE_GST_CEDRUS=y
 BR2_PACKAGE_ZBAR=y
@@ -912,7 +919,7 @@ BR2_PACKAGE_IW=y
 # BR2_PACKAGE_MUTT is not set
 # BR2_PACKAGE_NBD is not set
 # BR2_PACKAGE_NCFTP is not set
-# BR2_PACKAGE_NETCAT is not set
+BR2_PACKAGE_NETCAT=y
 # BR2_PACKAGE_NETKITBASE is not set
 # BR2_PACKAGE_NETKITTELNET is not set
 # BR2_PACKAGE_NETPLUG is not set
@@ -978,7 +985,7 @@ BR2_PACKAGE_WPA_SUPPLICANT_PASSPHRASE=y
 # Shell and utilities
 #
 # BR2_PACKAGE_AT is not set
-# BR2_PACKAGE_BASH is not set
+BR2_PACKAGE_BASH=y
 # BR2_PACKAGE_DASH is not set
 # BR2_PACKAGE_DIALOG is not set
 # BR2_PACKAGE_FILE is not set

@@ -81,10 +81,11 @@ GST1_PLUGINS_BAD_CONF_OPT += \
 	--disable-spandsp \
 	--disable-gsettings \
 	--disable-sndio \
-	--disable-hls
+	--disable-hls  \
+	--enable-srtp 
 #	--disable-zbar \
 
-GST1_PLUGINS_BAD_DEPENDENCIES = gst1-plugins-base gstreamer1  gettext libintl zbar
+GST1_PLUGINS_BAD_DEPENDENCIES = gst1-plugins-base gstreamer1  gettext libintl zbar gnutls libsrtp
 
 #libintl host-gettext
 
