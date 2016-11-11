@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot 2011.02-g54bab5f-dirty Configuration
-# Wed Nov  2 00:42:35 2016
+# Buildroot 2011.02-gadb17d2-dirty Configuration
+# Fri Nov 11 15:51:04 2016
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_arm=y
@@ -492,7 +492,7 @@ BR2_PACKAGE_OPENSSL=y
 BR2_PACKAGE_FREETYPE=y
 BR2_PACKAGE_JPEG=y
 # BR2_PACKAGE_LIBART is not set
-# BR2_PACKAGE_GDK_PIXBUF is not set
+BR2_PACKAGE_GDK_PIXBUF=y
 BR2_PACKAGE_LIBPNG=y
 # BR2_PACKAGE_LIBSVGTINY is not set
 # BR2_PACKAGE_LIBUNGIF is not set
@@ -547,6 +547,7 @@ BR2_PACKAGE_LIBGLIB2=y
 BR2_PACKAGE_LIBNICE=y
 BR2_PACKAGE_LIBSRTP=y
 BR2_PACKAGE_GNUTLS=y
+# BR2_PACKAGE_NETTLE is not set
 BR2_PACKAGE_MEDIA_CODEC=y
 BR2_PACKAGE_OPENCV=y
 

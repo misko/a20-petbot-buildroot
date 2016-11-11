@@ -346,12 +346,12 @@ else
 GST1_PLUGINS_GOOD_CONF_OPT += --disable-flac
 endif
 
-ifeq ($(BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_GDKPIXBUF),y)
+#ifeq ($(BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_GDKPIXBUF),y)
 GST1_PLUGINS_GOOD_CONF_OPT += --enable-gdk_pixbuf
 GST1_PLUGINS_GOOD_DEPENDENCIES += gdk-pixbuf
-else
-GST1_PLUGINS_GOOD_CONF_OPT += --disable-gdk_pixbuf
-endif
+#else
+#GST1_PLUGINS_GOOD_CONF_OPT += --disable-gdk_pixbuf
+#endif
 
 ifeq ($(BR2_PACKAGE_GST1_PLUGINS_GOOD_JPEG),y)
 GST1_PLUGINS_GOOD_CONF_OPT += --enable-jpeg
