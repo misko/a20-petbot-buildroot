@@ -1,0 +1,221 @@
+state.sunxicodec {
+	control.1 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 63'
+		iface MIXER
+		name 'Master Playback Volume'
+		value 63
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Playback Switch'
+		value false
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'FmL Switch'
+		value false
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'FmR Switch'
+		value false
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'LineL Switch'
+		value false
+	}
+	control.6 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'LineR Switch'
+		value false
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Ldac Left Mixer'
+		value false
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Rdac Right Mixer'
+		value false
+	}
+	control.9 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Ldac Right Mixer'
+		value false
+	}
+	control.10 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 15'
+		iface MIXER
+		name 'Mic Input Mux'
+		value 0
+	}
+	control.11 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'MIC output volume'
+		value 3
+	}
+	control.12 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'Fm output Volume'
+		value 3
+	}
+	control.13 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Line output Volume'
+		value true
+	}
+	control.14 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Master Capture Mute'
+		value true
+	}
+	control.15 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Capture Mute'
+		value false
+	}
+	control.16 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Capture Mute'
+		value false
+	}
+	control.17 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'LINEIN APM Volume'
+		value 0
+	}
+	control.18 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'Capture Volume'
+		value 3
+	}
+	control.19 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		iface MIXER
+		name 'MicL Volume'
+		value 0
+	}
+	control.20 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		iface MIXER
+		name 'MicR Volume'
+		value 0
+	}
+	control.21 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Mic2 Boost'
+		value false
+	}
+	control.22 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Mic1 Boost'
+		value true
+	}
+	control.23 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Mic Power'
+		value false
+	}
+	control.24 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'ADC Input Mux'
+		value 2
+	}
+	control.25 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'Mic2 gain Volume'
+		value 7
+	}
+	control.26 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		iface MIXER
+		name 'Mic1 gain Volume'
+		value 7
+	}
+}
