@@ -28,6 +28,7 @@ GSTREAMER1_CONF_OPT = \
 	--disable-valgrind \
 	--disable-benchmarks \
 	--disable-check \
+	--disable-gtk-doc \
 	$(if $(BR2_PACKAGE_GSTREAMER1_TRACE),,--disable-trace) \
 	$(if $(BR2_PACKAGE_GSTREAMER1_PARSE),,--disable-parse) \
 	$(if $(BR2_PACKAGE_GSTREAMER1_GST_DEBUG),,--disable-gst-debug) \

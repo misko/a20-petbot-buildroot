@@ -22,7 +22,8 @@ GST1_PLUGINS_GOOD_CONF_OPT = \
 	--disable-aalibtest \
 	--disable-libcaca \
 	--disable-esd \
-	--disable-esdtest
+	--disable-esdtest \
+	--disable-gtk-doc
 
 
 # Options which require currently unpackaged libraries
@@ -199,11 +200,11 @@ else
 GST1_PLUGINS_GOOD_CONF_OPT += --disable-monoscope
 endif
 
-ifeq ($(BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_MULTIFILE),y)
 GST1_PLUGINS_GOOD_CONF_OPT += --enable-multifile
-else
-GST1_PLUGINS_GOOD_CONF_OPT += --disable-multifile
-endif
+#ifeq ($(BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_MULTIFILE),y)
+#else
+#GST1_PLUGINS_GOOD_CONF_OPT += --disable-multifile
+#endif
 
 ifeq ($(BR2_PACKAGE_GST1_PLUGINS_GOOD_PLUGIN_MULTIPART),y)
 GST1_PLUGINS_GOOD_CONF_OPT += --enable-multipart

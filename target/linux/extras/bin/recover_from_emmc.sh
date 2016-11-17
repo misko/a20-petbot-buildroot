@@ -2,24 +2,27 @@
 
 pushd /tmp/
 
+umount /config
+umount /update
+
 mkdir -p ./emmc
 mkdir -p ./config
 # Set default values
 EMMC_DEVICE=${EMMC:="/dev/mmcblk0"}
 
-mkfs.ext4 $EMMC_DEVICE"p"6 > /dev/null 2>&1
+mkfs.ext4 $EMMC_DEVICE"p"6 #> /dev/null 2>&1
 if [ $? -ne 0 ]; then
-	echo "FAILED MKFS"
+	echo "FAILED MKFS 6"
 	exit 1
 fi
-mkfs.ext4 $EMMC_DEVICE"p"5 > /dev/null 2>&1
+mkfs.ext4 $EMMC_DEVICE"p"5 #> /dev/null 2>&1
 if [ $? -ne 0 ]; then
-	echo "FAILED MKFS"
+	echo "FAILED MKFS 5"
 	exit 1
 fi
-mkfs.ext4 $EMMC_DEVICE"p"2 > /dev/null 2>&1
+mkfs.ext4 $EMMC_DEVICE"p"2 #> /dev/null 2>&1
 if [ $? -ne 0 ]; then
-	echo "FAILED MKFS"
+	echo "FAILED MKFS 2"
 	exit 1
 fi
 

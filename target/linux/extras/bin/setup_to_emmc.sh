@@ -40,6 +40,21 @@ function xmount() {
 	fi
 }
 
+function xddgz() {
+	src=$1
+	dev=$2
+	gunzip -c $src | dd bs=1M of=$dev
+	if [ $? -ne 0 ]; then
+		echo "FAILED DD!"
+		exit 1
+	fi
+	resize2fs $dev
+	if [ $? -ne 0 ]; then
+		echo "FAILED RESIZE!"
+		exit 1
+	fi
+}
+
 function xdd() {
 	src=$1
 	dev=$2
@@ -62,7 +77,7 @@ function xcopy() {
 	mkdir -p ./emmc
 	echo "COPYING OVER SYSTEM $dev"
 	xmount $dev ./emmc $opt
-	time rsync -a --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/rootfs.ext4"} $src ./emmc
+	time rsync -a --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/rootfs.ext4","/rootfs.ext4.gz"} $src ./emmc
 	if [ $? -ne 0 ] ; then
 		echo "FAILED TO RSYNC"
 		exit 1
@@ -173,8 +188,8 @@ umount ./mmc
 #umount ./emmc2
 
 echo "COPY ROOT TO p2 - dd"
-xdd /rootfs.ext4 $EMMC_DEVICE"p3" # first copy the recovery partition 
-xdd /rootfs.ext4 $EMMC_DEVICE"p2" 
+xddgz /rootfs.ext4.gz $EMMC_DEVICE"p3" # first copy the recovery partition 
+xddgz /rootfs.ext4.gz $EMMC_DEVICE"p2" 
 xmount $EMMC_DEVICE"p3" ./emmc2
 touch ./emmc2/recovery_partition
 xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime

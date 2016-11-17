@@ -16,6 +16,7 @@ LIBNICE_INSTALL_STAGING = YES
 
 LIBNICE_CONF_OPT = \
 	--without-gstreamer-0.10 \
+	--disable-gtk-doc 
 #--without-gstreamer \
 
 LIBNICE_DEPENDENCIES = host-pkg-config host-libglib2 libglib2 gstreamer1 gst1-plugins-base

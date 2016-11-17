@@ -74,7 +74,7 @@ exit_with_hooks() {
     . /etc/dhclient-exit-hooks
   fi
 # probably should do something with exit status of the local script
-  ntpdate pool.ntp.org & #MISKO NTPDATE
+  #ntpdate pool.ntp.org & #MISKO NTPDATE
   exit $exit_status
 }
 

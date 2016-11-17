@@ -20,7 +20,8 @@ GST_PLUGINS_BAD1_CONF_OPT += \
 	--disable-cdio \
 	--disable-sidplay \
 	--disable-twolame \
-	--disable-x264
+	--disable-x264 \
+	--disable-gtk-doc
 
 GST1_PLUGINS_UGLY_DEPENDENCIES = gstreamer1 gst1-plugins-base
 

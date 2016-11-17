@@ -30,7 +30,8 @@ GST1_PLUGINS_BAD_CONF_OPT = \
 	--disable-osx_video \
 	--disable-sdltest \
 	--disable-wininet \
-	--disable-acm
+	--disable-acm \
+	--disable-gtk-doc
 
 # Options which require currently unpackaged libraries
 GST1_PLUGINS_BAD_CONF_OPT += \

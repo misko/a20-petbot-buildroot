@@ -47,5 +47,5 @@ udhcpc
 EOF
 
 chmod +x ${LICHEE_BR_OUT}/target/etc/init.d/auto_config_network
-(cd target/skel/ && tar -c *) | tar -C ${LICHEE_BR_OUT}/target/ -xv
+#(cd target/skel/ && tar -c *) | tar -C ${LICHEE_BR_OUT}/target/ -xv
 

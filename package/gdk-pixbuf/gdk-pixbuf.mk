@@ -14,7 +14,7 @@ GDK_PIXBUF_CONF_ENV = \
 	ac_cv_path_GLIB_GENMARSHAL=$(LIBGLIB2_HOST_BINARY) \
 	gio_can_sniff=no
 
-GDK_PIXBUF_CONF_OPT = --disable-glibtest  CFLAGS=-lintl
+GDK_PIXBUF_CONF_OPT = --disable-glibtest  CFLAGS=-lintl --disable-gtk-doc
 
 ifneq ($(BR2_LARGEFILE),y)
 GDK_PIXBUF_CONF_OPT += --disable-largefile

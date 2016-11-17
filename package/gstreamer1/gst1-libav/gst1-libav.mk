@@ -10,7 +10,7 @@ GST1_LIBAV_SITE = http://gstreamer.freedesktop.org/src/gst-libav
 
 GST1_LIBAV_DEPENDENCIES = host-pkg-config gstreamer1 gst1-plugins-base
 
-GST1_LIBAV_CONF_EXTRA_OPT = --cross-prefix=$(TARGET_CROSS) --target-os=linux
+GST1_LIBAV_CONF_EXTRA_OPT = --cross-prefix=$(TARGET_CROSS) --target-os=linux --disable-gtk-doc
 
 GST1_LIBAV_CFLAGS += -mfpu=neon-vfpv4
 
