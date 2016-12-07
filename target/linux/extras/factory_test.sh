@@ -60,19 +60,19 @@ echo TEST SIGNAL `iwconfig | grep Signal | sed 's@.*Signal.*level=\(.*\) \(dBm\)
 echo TEST MICROPHONE In_progress...
 play start_microphone.wav
 #do microphone test
-w1=`arecord -d 1 | md5sum`
-w2=`arecord -d 1 | md5sum`
-if [ "$w1" = "$w2" ] ; then
-	play failed_microphone.wav
-	echo TEST MICROPHONE FAIL
-else
-	play passed_microphone.wav
-	echo TEST MICROPHONE PASS
-fi
-
-
+#w1=`arecord -d 1 | md5sum`
+#w2=`arecord -d 1 | md5sum`
+#if [ "$w1" = "$w2" ] ; then
+#	play failed_microphone.wav
+#	echo TEST MICROPHONE FAIL
+#else
+#	play passed_microphone.wav
+#	echo TEST MICROPHONE PASS
+#fi
+#
+#
 echo TEST MICROPHONE PASS/PLAYBACK
-arecord -d 3 > /tmp/out.wav
+arecord -d 7 > /tmp/out.wav
 aplay /tmp/out.wav
 rm /tmp/out.wav
 echo TEST MICROPHONE PASS
