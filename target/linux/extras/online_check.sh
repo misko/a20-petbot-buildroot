@@ -12,7 +12,7 @@ if [ -e /dev/mmcblk1 ]; then
 	#echo "IN DEV MODE NO FLASH"
 	#exit
 	echo "STARTING COPY FROM SD CARD"
-	play flashing_petbot.wav 
+	play flashing_petbot.wav &
 	setup_to_emmc.sh
 	sync
 	if [ $? -eq 0 ]; then 
