@@ -25,7 +25,7 @@ A20_PETBOT_FIRMWARE_CONF_ENV =
 
 
 A20_PETBOT_FIRMWARE_DEPENDENCIES = gst1-plugins-base gstreamer1  gettext libintl  gst1-plugins-bad libcurl libnice mpg123 libao
-A20_PETBOT_FIRMWARE_MAKE_OPT += CFLAGS+="-std=gnu99 -DA20 -DPBSSL -DPTHREADS -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -g" LDFLAGS+="-lpthread -g"
+A20_PETBOT_FIRMWARE_MAKE_OPT += CFLAGS+="-std=gnu99 -DA20 -DPBSSL -DPBTHREADS -DWTF -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -g" LDFLAGS+="-lpthread -g"
 
 #$(eval $(autotools-package))
 $(eval $(call AUTOTARGETS,package,a20-petbot-firmware))
