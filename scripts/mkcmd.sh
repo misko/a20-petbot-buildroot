@@ -469,10 +469,9 @@ function mkrootfs()
 	#MISKO lets try to mix in dragonboard...
         cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/
         mk_info "cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/"
-	${LICHEE_BR_DIR}/target/linux/install.sh ${LICHEE_BR_OUT}/target/
 	rm -rf ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         #cp  -Lr ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware
-	rsync -Lrv --exclude='*.in' --exclude='*.am' --exclude='*.ac' --exclude=.git --exclude=.deps --exclude=autom4te.cache --exclude='*.[cho]' --exclude="*update_key" --include='*.sh' ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD/ ${LICHEE_BR_OUT}/target/a20-petbot-firmware
+	rsync -Lrv --exclude='*.in' --exclude='*.am' --exclude='*.ac' --exclude=.git --exclude=.deps --exclude=autom4te.cache --exclude='*.[cho]' --include='*.sh' ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD/ ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
         mk_info cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
 
@@ -485,6 +484,7 @@ function mkrootfs()
         #(cd ${LICHEE_BR_DIR}/target/linux; ./build.sh)
 	cp -r ${LICHEE_BR_DIR}/target/linux/output/* ${LICHEE_BR_OUT}/target/
 	mk_info "build.sh for target linux - done"
+	${LICHEE_BR_DIR}/target/linux/install.sh ${LICHEE_BR_OUT}/target/
 	sleep 5
 	#MISKO
 	mk_info "WARNING CONFIGURING ROOT WITH FIXED SIZE"
