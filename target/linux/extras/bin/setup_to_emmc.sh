@@ -162,11 +162,16 @@ w
 __EOF__
 
 #format the EMMC device
-format $EMMC_DEVICE"p"1 "vfat"
-format $EMMC_DEVICE"p"2 "ext4"
-format $EMMC_DEVICE"p"3 "ext4"
-format $EMMC_DEVICE"p"5 "ext4"
-format $EMMC_DEVICE"p"6 "ext4"
+format $EMMC_DEVICE"p"1 "vfat" &
+format $EMMC_DEVICE"p"2 "ext4" &
+format $EMMC_DEVICE"p"3 "ext4" &
+format $EMMC_DEVICE"p"5 "ext4" &
+format $EMMC_DEVICE"p"6 "ext4" &
+wait
+wait
+wait
+wait
+wait
 
 mkdir -p ./emmc
 mkdir -p ./emmc2
@@ -188,8 +193,12 @@ umount ./mmc
 #umount ./emmc2
 
 echo "COPY ROOT TO p2 - dd"
-xddgz /rootfs.ext4.gz $EMMC_DEVICE"p3" # first copy the recovery partition 
-xddgz /rootfs.ext4.gz $EMMC_DEVICE"p2" 
+date
+xddgz /rootfs.ext4.gz $EMMC_DEVICE"p3" & # first copy the recovery partition 
+xddgz /rootfs.ext4.gz $EMMC_DEVICE"p2" &
+wait
+wait
+date
 xmount $EMMC_DEVICE"p3" ./emmc2
 touch ./emmc2/recovery_partition
 xcopy "./emmc2/a20-petbot-firmware/config/" $EMMC_DEVICE"p5" noatime
