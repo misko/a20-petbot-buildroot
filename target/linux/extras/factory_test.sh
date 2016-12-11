@@ -15,6 +15,17 @@ play() {
 echo TEST VERSION V`grep VERSION /config/pb_config | awk '{print $2}'`
 
 #run the tests
+echo TEST IR In_progress...
+play start_ir.wav
+export ir=`test_spi | awk '{a+=$NF} END {print int(a/NR)}'`
+if [ "$ir" -gt 900 -a "$ir" -lt 1015 ]; then
+	play ir_pass.wav
+	echo TEST IR "$ir"_PASS
+else
+	play ir_fail.wav
+	echo TEST IR FAIL
+fi
+
 #LED test
 echo TEST LED In_progress...
 play start_led.wav
