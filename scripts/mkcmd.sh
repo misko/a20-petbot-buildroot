@@ -468,6 +468,9 @@ function mkrootfs()
         [ $? -ne 0 ] && mk_error "build rootfs Failed" && return 1
 	#MISKO lets try to mix in dragonboard...
         cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/
+	mkdir -p ${LICHEE_BR_OUT}/target/usr/lib/gio/modules/
+	mv ${LICHEE_BR_OUT}/target/home/vagrant/baidu/a20/lichee/out/linux/common/buildroot/host/usr/arm-unknown-linux-gnueabi/sysroot/usr/lib/gio/modules/lib* ${LICHEE_BR_OUT}/target/usr/lib/gio/modules/
+	ln -s /usr/bin/certtool ${LICHEE_BR_OUT}/target/usr/bin/gnutls-certtool
         mk_info "cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/"
 	rm -rf ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         #cp  -Lr ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware

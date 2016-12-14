@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot 2011.02-ga532d28-dirty Configuration
-# Thu Nov 17 03:00:46 2016
+# Buildroot 2011.02-gec482df-dirty Configuration
+# Tue Dec 13 13:56:10 2016
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_arm=y
@@ -111,10 +111,6 @@ BR2_TOOLCHAIN_EXTERNAL_GLIBC=y
 #
 # BR2_PACKAGE_GDB is not set
 # BR2_PACKAGE_GDB_SERVER is not set
-# BR2_GDB_VERSION_6_7_1 is not set
-# BR2_GDB_VERSION_6_8 is not set
-# BR2_GDB_VERSION_7_0_1 is not set
-# BR2_GDB_VERSION_7_1 is not set
 BR2_LARGEFILE=y
 BR2_INET_IPV6=y
 BR2_INET_RPC=y
@@ -543,6 +539,8 @@ BR2_PACKAGE_LIBGLIB2=y
 BR2_PACKAGE_LIBNICE=y
 BR2_PACKAGE_LIBSRTP=y
 BR2_PACKAGE_GNUTLS=y
+BR2_PACKAGE_LIBTASN1=y
+BR2_PACKAGE_GLIB_NETWORKING=y
 # BR2_PACKAGE_NETTLE is not set
 BR2_PACKAGE_MEDIA_CODEC=y
 BR2_PACKAGE_OPENCV=y

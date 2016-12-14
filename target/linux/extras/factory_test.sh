@@ -23,7 +23,7 @@ if [ "$ir" -gt 900 -a "$ir" -lt 1015 ]; then
 	echo TEST IR "$ir"_PASS
 else
 	play ir_fail.wav
-	echo TEST IR FAIL
+	echo TEST IR "$ir"_FAIL
 fi
 
 #LED test
