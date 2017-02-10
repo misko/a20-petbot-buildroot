@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#echo '/update/core' > /proc/sys/kernel/core_pattern
+echo '/update/core' > /proc/sys/kernel/core_pattern
+
 snd_dir=/a20-petbot-firmware/sounds/
 play() {
 	fn=$1
@@ -28,15 +31,25 @@ else
 	mkdir -p /update
 	mkdir -p /config
 	#try to mount and format if necessary
-	mount /dev/mmcblk0p5 /config
+	#mount /dev/mmcblk0p5 /config
+	mountpoint /config
 	if [ $? -ne 0 ]; then
 		echo "FAILED TO MOUNT CONFIG, formatting..."
 		mkfs.ext4 /dev/mmcblk0p5
+		mount /dev/mmcblk0p5 /config
+		cp -r /a20-petbot-firmware/* /config/
 	fi
-	mount /dev/mmcblk0p6 /update
+	#mount /dev/mmcblk0p6 /update
+	mountpoint /update
 	if [ $? -ne 0 ]; then
 		echo "FAILED TO MOUNT UPDATE, formatting..."
 		mkfs.ext4 /dev/mmcblk0p6
+		mount /dev/mmcblk0p6 /update
+	fi
+
+	#if we are missing the dhclient file make sure we get it...
+	if [ ! -f /config/dhclient.conf ] ; then
+		cp /a20-petbot-firmware/dhclient.conf /config/
 	fi
 		
 fi
