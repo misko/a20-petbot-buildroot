@@ -16,9 +16,10 @@ LIBNICE_INSTALL_STAGING = YES
 
 LIBNICE_CONF_OPT = \
 	--without-gstreamer-0.10 \
-	--disable-gtk-doc 
+	--disable-gtk-doc  \
+	--enable-gupnp
 #--without-gstreamer \
 
-LIBNICE_DEPENDENCIES = host-pkg-config host-libglib2 libglib2 gstreamer1 gst1-plugins-base
+LIBNICE_DEPENDENCIES = host-pkg-config host-libglib2 libglib2 gstreamer1 gst1-plugins-base gupnp-igd
 
 $(eval $(call AUTOTARGETS,package,libnice)) 
