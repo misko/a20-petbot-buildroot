@@ -13,8 +13,8 @@ DHCP_CONF_OPT = \
 	--with-cli-lease-file=/var/lib/dhcp/dhclient.leases \
 	--with-srv-pid-file=/var/run/dhcpd.pid \
 	--with-cli-pid-file=/var/run/dhclient.pid \
-	--with-relay-pid-file=/var/run/dhcrelay.pid \
-	--disable-dhcpv6
+	--with-relay-pid-file=/var/run/dhcrelay.pid 
+#	--disable-dhcpv6
 
 ifeq ($(BR2_PACKAGE_DHCP_SERVER),y)
 define DHCP_INSTALL_SERVER
