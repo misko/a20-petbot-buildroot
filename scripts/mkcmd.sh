@@ -474,13 +474,14 @@ function mkrootfs()
         mk_info "cp -r ${LICHEE_BR_DIR}/target/linux/extras/* ${LICHEE_BR_OUT}/target/"
 	rm -rf ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         #cp  -Lr ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD ${LICHEE_BR_OUT}/target/a20-petbot-firmware
-	rsync -Lrv --exclude='*.in' --exclude='*.am' --exclude='*.ac' --exclude=.git --exclude=.deps --exclude=autom4te.cache --exclude='*.[cho]' --include='*.sh' ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD/ ${LICHEE_BR_OUT}/target/a20-petbot-firmware
+	rsync -Lrv --exclude='*.in' --exclude='*.am' --exclude '*.cpp' --exclude '*.c' --exclude='*.ac' --exclude=.git --exclude=.deps --exclude=autom4te.cache --exclude='*.[cho]' --include='*.sh' ${LICHEE_BR_DIR}/target/linux/a20-petbot-firmware-HEAD/ ${LICHEE_BR_OUT}/target/a20-petbot-firmware
         cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
         mk_info cp -r ${LICHEE_BR_OUT}/build/media-codec-0.2/common/*.so ${LICHEE_BR_OUT}/target/usr/lib/
 
 	cp -rf ${LICHEE_KERN_DIR}/output/petbot/lib ${LICHEE_BR_OUT}/target/
 	rm -rf ${LICHEE_BR_OUT}/target/lib/modules/3.4.75.sun7i+/kernel/drivers/staging	
 	mk_info cp -rf ${LICHEE_KERN_DIR}/output/petbot/lib ${LICHEE_BR_OUT}/target/	
+
 	
 	#run the dragonboar script
 	mk_info "build.sh for target linux"
