@@ -1,0 +1,15 @@
+config BR2_PACKAGE_GUPNP_IGD
+	bool "gupnp-igd"
+	depends on BR2_USE_WCHAR # glib2, gssdp, util-linux
+	depends on BR2_TOOLCHAIN_HAS_THREADS # glib2, gssdp
+	depends on BR2_USE_MMU # glib2, gssdp
+	help
+	  GUPnP-igd implements the UPnP specification: resource announcement
+	  and discovery, description, control, event notification, and
+	  presentation.
+
+	  http://www.gupnp.org/
+
+comment "gupnp-igd needs a toolchain w/ wchar, threads"
+	depends on BR2_USE_MMU
+	depends on !BR2_USE_WCHAR || !BR2_TOOLCHAIN_HAS_THREADS
