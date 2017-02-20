@@ -1,0 +1,14 @@
+--- a/agent/conncheck.c	2015-04-21 05:37:13.000000000 +0800
++++ b/agent/conncheck.c	2017-02-20 15:26:23.288921934 +0800
+@@ -645,10 +645,9 @@
+             gchar tmpbuf[INET6_ADDRSTRLEN];
+             nice_address_to_string (&p->remote->addr, tmpbuf);
+             nice_debug ("Agent %p : Keepalive STUN-CC REQ to '%s:%u', "
+-                "socket=%u (c-id:%u), username='%.*s' (%" G_GSIZE_FORMAT "), "
++                "(c-id:%u), username='%.*s' (%" G_GSIZE_FORMAT "), "
+                 "password='%.*s' (%" G_GSIZE_FORMAT "), priority=%u.", agent,
+                 tmpbuf, nice_address_get_port (&p->remote->addr),
+-                g_socket_get_fd(((NiceSocket *)p->local->sockptr)->fileno),
+                 component->id, (int) uname_len, uname, uname_len,
+                 (int) password_len, password, password_len, priority);
+           }
